@@ -1,0 +1,7 @@
+<ng-container *ngIf="layout">
+    <span class="title">{{ layout.title }}</span>
+    <span class="nav nav2" *ngFor="let nav of layout.header_links">
+        {{ nav.text }}
+        <ng-template [storyblokComponent]="nav"></ng-template>
+    </span>
+</ng-container>

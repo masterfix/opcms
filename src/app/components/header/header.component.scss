@@ -1,0 +1,24 @@
+:host {
+    display: block;
+    //background-color: rgb(53, 80, 156);
+    //color: white;
+    //padding: 10px;
+}
+
+:host a {
+    color: orange;
+}
+
+.title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.nav {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }

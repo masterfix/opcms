@@ -1,0 +1,2 @@
+<a *ngIf="blok.link.linktype === 'url'" [href]="blok.link.url">{{ blok.text }}</a>
+<a *ngIf="blok.link.linktype === 'story'" [routerLink]="blok.link.cached_url">{{ blok.text }}</a>

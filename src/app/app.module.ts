@@ -3,28 +3,39 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { StoryblokModule } from './storyblok/storyblok.module';
+import { HeaderComponent } from './components/header/header.component';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+import { NgxStoryblokModule } from 'ngx-storyblok';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoryblokModule,
+    NzLayoutModule,
+    NzMenuModule,
+    NzBreadCrumbModule,
+    NgxStoryblokModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

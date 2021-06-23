@@ -1,4 +1,14 @@
-<!-- NG-ZORRO -->
-<a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
-  <img height="300" src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg">
-</a>
+<nz-layout *ngIf="layout$ | async as layout">
+    <nz-header>
+        <div class="logo"><a routerLink="/">OPCMS</a></div>
+        <ul nz-menu nzTheme="dark" nzMode="horizontal">
+            <li *ngFor="let nav of layout.header_links" nz-menu-item nzMatchRouter>
+                <a [routerLink]="nav.link.cached_url">{{ nav.text }}</a>
+            </li>
+        </ul>
+    </nz-header>
+    <nz-content>
+        <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer>{{ layout.footer_text }}</nz-footer>
+</nz-layout>
